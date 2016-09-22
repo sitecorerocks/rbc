@@ -1,0 +1,45 @@
+----item----
+version: 1
+id: {0F6CFC46-0C68-4EFD-9978-6B5D254FE3D7}
+database: master
+path: /sitecore/templates/User Defined/Regal Beloit/Data Templates/Category/__Standard Values
+parent: {9DFC27FD-5494-4930-BDDF-F0BC3359EC99}
+name: __Standard Values
+master: {00000000-0000-0000-0000-000000000000}
+template: {9DFC27FD-5494-4930-BDDF-F0BC3359EC99}
+templatekey: Category
+created: 20160921T171232:636100747522130000
+
+----version----
+language: en
+version: 1
+revision: 54eebc51-8775-461e-abe8-c2cd46bcfb35
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160921T171232Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+54eebc51-8775-461e-abe8-c2cd46bcfb35
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160921T171232Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

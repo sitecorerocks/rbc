@@ -1,0 +1,59 @@
+----item----
+version: 1
+id: {1B6E8B0E-77C3-4CC5-B89B-F7C757290704}
+database: master
+path: /sitecore/templates/User Defined/Regal Beloit/Folders/Brands Folder/__Standard Values
+parent: {1B9BF867-B2D4-4D96-B004-503E00E2EB36}
+name: __Standard Values
+master: {00000000-0000-0000-0000-000000000000}
+template: {1B9BF867-B2D4-4D96-B004-503E00E2EB36}
+templatekey: Brands Folder
+created: 20160921T172525:636100755256570000
+
+----field----
+field: {1172F251-DAD4-4EFB-A329-0C63500E4F1E}
+name: __Masters
+key: __masters
+content-length: 38
+
+{4D41791A-D480-47D0-B7B6-71B2E49201F8}
+----version----
+language: en
+version: 1
+revision: 2e1c2ae0-8010-4928-af97-a278dbbb6aa8
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160921T172526Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+2e1c2ae0-8010-4928-af97-a278dbbb6aa8
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160921T173122Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

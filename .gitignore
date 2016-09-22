@@ -13,6 +13,7 @@ lib/
 IconCache/
 local/
 Social/
+Websites/Website/layouts/system/*
 [Ss]itecore*.config
 
 *.disabled

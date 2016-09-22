@@ -1,0 +1,66 @@
+----item----
+version: 1
+id: {8813359B-5815-4E56-8AFD-5452B9BE0140}
+database: master
+path: /sitecore/content/Regal Beloit
+parent: {0DE95AE4-41AB-4D01-9EB0-67441B7C2450}
+name: Regal Beloit
+master: {00000000-0000-0000-0000-000000000000}
+template: {DE73DFB7-FA0E-476A-B29C-5600F623C296}
+templatekey: Home Page
+created: 20160921T175520:636100773207870000
+
+----version----
+language: en
+version: 1
+revision: f1126216-771a-4fc6-af2b-6e0cc22b6b90
+
+----field----
+field: {7374FE16-A227-4214-BDE5-C159CF2673D1}
+name: Browser Title
+key: browser title
+content-length: 12
+
+Regal Beloit
+----field----
+field: {EF7E55EF-E1A6-41DE-BC88-AAA5AAC8A276}
+name: Navigation Title
+key: navigation title
+content-length: 12
+
+Regal Beloit
+----field----
+field: {AEAA1771-9DBC-4A51-9789-A65265170239}
+name: Meta Title
+key: meta title
+content-length: 12
+
+Regal Beloit
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160921T175520Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+f1126216-771a-4fc6-af2b-6e0cc22b6b90
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160921T181329Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

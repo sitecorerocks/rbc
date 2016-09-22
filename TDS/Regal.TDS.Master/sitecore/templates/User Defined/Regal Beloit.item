@@ -1,0 +1,52 @@
+----item----
+version: 1
+id: {FD7F8B3A-2BA8-48E0-9872-7FC724452CA6}
+database: master
+path: /sitecore/templates/User Defined/Regal Beloit
+parent: {B29EE504-861C-492F-95A3-0D890B6FCA09}
+name: Regal Beloit
+master: {00000000-0000-0000-0000-000000000000}
+template: {0437FEE2-44C9-46A6-ABE9-28858D9FEE8C}
+templatekey: Template Folder
+created: 20160917T184813:636097348935930000
+
+----version----
+language: en
+version: 1
+revision: e989d1f0-73b7-4ce9-b967-1d28338be5ed
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160917T184814Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+e989d1f0-73b7-4ce9-b967-1d28338be5ed
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160921T181259Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
