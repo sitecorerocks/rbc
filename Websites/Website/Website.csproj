@@ -146,7 +146,16 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Config\Include\DataFolder.config" />
+    <None Include="App_Config\Include\SiteDefinition.config" />
+    <Content Include="App_Config\Sitecore.config" />
     <None Include="Properties\PublishProfiles\local.pubxml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Regal.Main.Web.SC\Regal.Main.Web.SC.csproj">
+      <Project>{4cc92820-f79b-4b1f-a15d-bd89adf08512}</Project>
+      <Name>Regal.Main.Web.SC</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

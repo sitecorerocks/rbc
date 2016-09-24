@@ -61,7 +61,7 @@ namespace <#= GetNamespace(DefaultNamespace, template)#>
 	/// <para>Path: <#= template.Path #></para>	
 	/// <para>ID: <#= template.ID.ToString() #></para>	
 	/// </summary>
-	[SitecoreType(TemplateId=<#= AsInterfaceName(template.Name) #>Constants.TemplateIdString )] //, Cachable = true
+	[SitecoreType(TemplateId=<#= AsInterfaceName(template.Name) #>Constants.TemplateIdString, AutoMap = true )] //, Cachable = true
 	public partial interface <#= AsInterfaceName(template.Name) #> : IGlassBase <#=GetObjectInheritanceDefinition(DefaultNamespace, template, true, (string s) => AsInterfaceName(s))#>
 	{
 			<#foreach(SitecoreField field in GetFieldsForTemplate(template, false)){#>
@@ -81,7 +81,7 @@ namespace <#= GetNamespace(DefaultNamespace, template)#>
 
 	public static partial class <#= AsInterfaceName(template.Name) #>Constants{
 
-			public const string TemplateIdString = "<#= template.ID.ToString().ToUpper() #>";
+			public const string TemplateIdString = "<#= template.ID.ToString() #>";
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "<#= template.Name #>";
 
@@ -103,7 +103,7 @@ if (!IsInterfaceWord(template.Name)){ #>
 	/// <para>Path: <#= template.Path #></para>	
 	/// <para>ID: <#= template.ID.ToString() #></para>	
 	/// </summary>
-	[SitecoreType(TemplateId=<#= AsInterfaceName(template.Name) #>Constants.TemplateIdString)] //, Cachable = true
+	[SitecoreType(TemplateId=<#= AsInterfaceName(template.Name) #>Constants.TemplateIdString, AutoMap = true)] //, Cachable = true
 	public partial class <#= AsClassName(template.Name) #>  : GlassBase, <#=AsInterfaceName(template.Name)#> 
 	{
 	   
@@ -203,7 +203,7 @@ public static string GetGlassFieldType(SitecoreField field)
 				return "File";
 
 			case "image":
-				return "Glass.Mapper.Sc.Fields.Image";
+				return "Image";
 
 			case "general link":
 			case "general link with search":

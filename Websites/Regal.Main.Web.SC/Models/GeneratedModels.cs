@@ -17,6 +17,8 @@
 
 using System;   
 using System.Collections.Generic;   
+using System.Linq;
+using System.Text;
 using Glass.Mapper.Sc.Configuration.Attributes;
 using Glass.Mapper.Sc.Configuration;
 using Glass.Mapper.Sc.Fields;
@@ -31,10 +33,7 @@ namespace Regal.Main.Web.SC.Models
 	public partial interface IGlassBase{
 		
 		[SitecoreId]
-		Guid Id { get; }
-
-		[SitecoreInfo(SitecoreInfoType.Name)]
-        string Name { get; set; }
+		Guid Id{ get; }
 
 		[SitecoreInfo(SitecoreInfoType.Language)]
         Language Language{ get; }
@@ -42,26 +41,14 @@ namespace Regal.Main.Web.SC.Models
         [SitecoreInfo(SitecoreInfoType.Version)]
         int Version { get; }
 
-		[SitecoreInfo(SitecoreInfoType.TemplateId)]
-        Guid TemplateId { get; }
-
-		[SitecoreInfo(SitecoreInfoType.TemplateName)]
-        string TemplateName { get; }
-
 		[SitecoreInfo(SitecoreInfoType.Url)]
         string Url { get; }
-
-        [SitecoreInfo(SitecoreInfoType.Path)]
-        string Path { get; }
 	}
 
 	public abstract partial class GlassBase : IGlassBase{
 		
 		[SitecoreId]
-		public virtual Guid Id{ get; private set;}
-
-		[SitecoreInfo(SitecoreInfoType.Name)]
-        public virtual string Name { get; set; }
+		public virtual Guid Id{ get; set;}
 
 		[SitecoreInfo(SitecoreInfoType.Language)]
         public virtual Language Language{ get; private set; }
@@ -71,15 +58,1006 @@ namespace Regal.Main.Web.SC.Models
 
 		[SitecoreInfo(SitecoreInfoType.Url)]
         public virtual string Url { get; private set; }
+	}
+}
+namespace Regal.Main.Web.SC.Models.sitecore.templates.User_Defined.Regal_Beloit.Pages
+{
 
-		[SitecoreInfo(SitecoreInfoType.TemplateId)]
-        public virtual Guid TemplateId { get; private set; }
 
-		[SitecoreInfo(SitecoreInfoType.TemplateName)]
-        public virtual string TemplateName { get; private set; }
+ 	/// <summary>
+	/// IProduct_Details Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Regal Beloit/Pages/Product Details</para>	
+	/// <para>ID: 1b7ebc0b-4e66-4f57-bc32-f5f2f93a50cc</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IProduct_DetailsConstants.TemplateIdString, AutoMap = true )] //, Cachable = true
+	public partial interface IProduct_Details : IGlassBase , global::Regal.Main.Web.SC.Models.sitecore.templates.User_Defined.Regal_Beloit.Base_Templates.IBase_Page
+	{
+								/// <summary>
+					/// The Brand field.
+					/// <para></para>
+					/// <para>Field Type: Droplink</para>		
+					/// <para>Field ID: 0212b695-8701-499e-9be5-8593fc34db84</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IProduct_DetailsConstants.BrandFieldName)]
+					Guid Brand  {get; set;}
+			
+								/// <summary>
+					/// The Product Id field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 9c8cbad2-81ea-4c01-a643-d2f5159efe4e</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IProduct_DetailsConstants.Product_IdFieldName)]
+					string Product_Id  {get; set;}
+			
+				}
 
-    	[SitecoreInfo(SitecoreInfoType.Path)]
-        public virtual string Path { get; private set; }
+
+	public static partial class IProduct_DetailsConstants{
+
+			public const string TemplateIdString = "1b7ebc0b-4e66-4f57-bc32-f5f2f93a50cc";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Product Details";
+
+					
+			public static readonly ID BrandFieldId = new ID("0212b695-8701-499e-9be5-8593fc34db84");
+			public const string BrandFieldName = "Brand";
+			
+					
+			public static readonly ID Product_IdFieldId = new ID("9c8cbad2-81ea-4c01-a643-d2f5159efe4e");
+			public const string Product_IdFieldName = "Product Id";
+			
+					
+			public static readonly ID Include_In_NavigationFieldId = new ID("30c12ab3-d1be-4ed3-a515-cf0cc52db8c0");
+			public const string Include_In_NavigationFieldName = "Include In Navigation";
+			
+					
+			public static readonly ID Navigation_TitleFieldId = new ID("ef7e55ef-e1a6-41de-bc88-aaa5aac8a276");
+			public const string Navigation_TitleFieldName = "Navigation Title";
+			
+					
+			public static readonly ID Custom_MetaFieldId = new ID("303006aa-4139-46bd-9002-6b9c80b39fe5");
+			public const string Custom_MetaFieldName = "Custom Meta";
+			
+					
+			public static readonly ID Meta_DescriptionFieldId = new ID("62f7f233-6928-4670-ba6f-95b2ad65a300");
+			public const string Meta_DescriptionFieldName = "Meta Description";
+			
+					
+			public static readonly ID Meta_KeywordsFieldId = new ID("32497ca5-22da-47ce-b00c-403aa5368ed8");
+			public const string Meta_KeywordsFieldName = "Meta Keywords";
+			
+					
+			public static readonly ID Meta_TitleFieldId = new ID("aeaa1771-9dbc-4a51-9789-a65265170239");
+			public const string Meta_TitleFieldName = "Meta Title";
+			
+					
+			public static readonly ID No_FollowFieldId = new ID("75a39161-c3e5-45cb-8cf2-fe1b73a268fb");
+			public const string No_FollowFieldName = "No Follow";
+			
+					
+			public static readonly ID No_IndexFieldId = new ID("4a6b545f-1268-47d5-8db0-047fc3378091");
+			public const string No_IndexFieldName = "No Index";
+			
+					
+			public static readonly ID DescriptionFieldId = new ID("8928972d-2729-47aa-8200-99eddb409496");
+			public const string DescriptionFieldName = "Description";
+			
+					
+			public static readonly ID ImageFieldId = new ID("44d75529-0f6b-4b50-8373-bc6110f8904c");
+			public const string ImageFieldName = "Image";
+			
+					
+			public static readonly ID Page_TitleFieldId = new ID("7374fe16-a227-4214-bde5-c159cf2673d1");
+			public const string Page_TitleFieldName = "Page Title";
+			
+			
+
+	}
+
+	
+	/// <summary>
+	/// Product_Details
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Regal Beloit/Pages/Product Details</para>	
+	/// <para>ID: 1b7ebc0b-4e66-4f57-bc32-f5f2f93a50cc</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IProduct_DetailsConstants.TemplateIdString, AutoMap = true)] //, Cachable = true
+	public partial class Product_Details  : GlassBase, IProduct_Details 
+	{
+	   
+						/// <summary>
+				/// The Brand field.
+				/// <para></para>
+				/// <para>Field Type: Droplink</para>		
+				/// <para>Field ID: 0212b695-8701-499e-9be5-8593fc34db84</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IProduct_DetailsConstants.BrandFieldName)]
+				public virtual Guid Brand  {get; set;}
+					
+						/// <summary>
+				/// The Product Id field.
+				/// <para></para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: 9c8cbad2-81ea-4c01-a643-d2f5159efe4e</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IProduct_DetailsConstants.Product_IdFieldName)]
+				public virtual string Product_Id  {get; set;}
+					
+						/// <summary>
+				/// The Include In Navigation field.
+				/// <para></para>
+				/// <para>Field Type: Checkbox</para>		
+				/// <para>Field ID: 30c12ab3-d1be-4ed3-a515-cf0cc52db8c0</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IProduct_DetailsConstants.Include_In_NavigationFieldName)]
+				public virtual bool Include_In_Navigation  {get; set;}
+					
+						/// <summary>
+				/// The Navigation Title field.
+				/// <para></para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: ef7e55ef-e1a6-41de-bc88-aaa5aac8a276</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IProduct_DetailsConstants.Navigation_TitleFieldName)]
+				public virtual string Navigation_Title  {get; set;}
+					
+						/// <summary>
+				/// The Custom Meta field.
+				/// <para></para>
+				/// <para>Field Type: Multi-Line Text</para>		
+				/// <para>Field ID: 303006aa-4139-46bd-9002-6b9c80b39fe5</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IProduct_DetailsConstants.Custom_MetaFieldName)]
+				public virtual string Custom_Meta  {get; set;}
+					
+						/// <summary>
+				/// The Meta Description field.
+				/// <para></para>
+				/// <para>Field Type: Rich Text</para>		
+				/// <para>Field ID: 62f7f233-6928-4670-ba6f-95b2ad65a300</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IProduct_DetailsConstants.Meta_DescriptionFieldName)]
+				public virtual string Meta_Description  {get; set;}
+					
+						/// <summary>
+				/// The Meta Keywords field.
+				/// <para></para>
+				/// <para>Field Type: Multi-Line Text</para>		
+				/// <para>Field ID: 32497ca5-22da-47ce-b00c-403aa5368ed8</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IProduct_DetailsConstants.Meta_KeywordsFieldName)]
+				public virtual string Meta_Keywords  {get; set;}
+					
+						/// <summary>
+				/// The Meta Title field.
+				/// <para></para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: aeaa1771-9dbc-4a51-9789-a65265170239</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IProduct_DetailsConstants.Meta_TitleFieldName)]
+				public virtual string Meta_Title  {get; set;}
+					
+						/// <summary>
+				/// The No Follow field.
+				/// <para></para>
+				/// <para>Field Type: Checkbox</para>		
+				/// <para>Field ID: 75a39161-c3e5-45cb-8cf2-fe1b73a268fb</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IProduct_DetailsConstants.No_FollowFieldName)]
+				public virtual bool No_Follow  {get; set;}
+					
+						/// <summary>
+				/// The No Index field.
+				/// <para></para>
+				/// <para>Field Type: Checkbox</para>		
+				/// <para>Field ID: 4a6b545f-1268-47d5-8db0-047fc3378091</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IProduct_DetailsConstants.No_IndexFieldName)]
+				public virtual bool No_Index  {get; set;}
+					
+						/// <summary>
+				/// The Description field.
+				/// <para></para>
+				/// <para>Field Type: Rich Text</para>		
+				/// <para>Field ID: 8928972d-2729-47aa-8200-99eddb409496</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IProduct_DetailsConstants.DescriptionFieldName)]
+				public virtual string Description  {get; set;}
+					
+						/// <summary>
+				/// The Image field.
+				/// <para></para>
+				/// <para>Field Type: Image</para>		
+				/// <para>Field ID: 44d75529-0f6b-4b50-8373-bc6110f8904c</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IProduct_DetailsConstants.ImageFieldName)]
+				public virtual Image Image  {get; set;}
+					
+						/// <summary>
+				/// The Page Title field.
+				/// <para></para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: 7374fe16-a227-4214-bde5-c159cf2673d1</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IProduct_DetailsConstants.Page_TitleFieldName)]
+				public virtual string Page_Title  {get; set;}
+					
+			
+	}
+}
+namespace Regal.Main.Web.SC.Models.sitecore.templates.User_Defined.Regal_Beloit.Folders
+{
+
+
+ 	/// <summary>
+	/// IBrands_Folder Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Regal Beloit/Folders/Brands Folder</para>	
+	/// <para>ID: 1b9bf867-b2d4-4d96-b004-503e00e2eb36</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IBrands_FolderConstants.TemplateIdString, AutoMap = true )] //, Cachable = true
+	public partial interface IBrands_Folder : IGlassBase 
+	{
+				}
+
+
+	public static partial class IBrands_FolderConstants{
+
+			public const string TemplateIdString = "1b9bf867-b2d4-4d96-b004-503e00e2eb36";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Brands Folder";
+
+			
+
+	}
+
+	
+	/// <summary>
+	/// Brands_Folder
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Regal Beloit/Folders/Brands Folder</para>	
+	/// <para>ID: 1b9bf867-b2d4-4d96-b004-503e00e2eb36</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IBrands_FolderConstants.TemplateIdString, AutoMap = true)] //, Cachable = true
+	public partial class Brands_Folder  : GlassBase, IBrands_Folder 
+	{
+	   
+			
+	}
+}
+namespace Regal.Main.Web.SC.Models.sitecore.templates.User_Defined.Regal_Beloit.Data_Templates
+{
+
+
+ 	/// <summary>
+	/// IBrand Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Regal Beloit/Data Templates/Brand</para>	
+	/// <para>ID: 4d41791a-d480-47d0-b7b6-71b2e49201f8</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IBrandConstants.TemplateIdString, AutoMap = true )] //, Cachable = true
+	public partial interface IBrand : IGlassBase , global::Regal.Main.Web.SC.Models.sitecore.templates.User_Defined.Regal_Beloit.Base_Templates.IBase_Data
+	{
+								/// <summary>
+					/// The Categories field.
+					/// <para></para>
+					/// <para>Field Type: Multilist</para>		
+					/// <para>Field ID: 8fedddca-ed15-4775-9ae3-c6089796b106</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IBrandConstants.CategoriesFieldName)]
+					IEnumerable<Guid> Categories  {get; set;}
+			
+								/// <summary>
+					/// The Industries field.
+					/// <para></para>
+					/// <para>Field Type: Multilist</para>		
+					/// <para>Field ID: 95a8500d-8506-4240-8a38-aee0b462f378</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IBrandConstants.IndustriesFieldName)]
+					IEnumerable<Guid> Industries  {get; set;}
+			
+				}
+
+
+	public static partial class IBrandConstants{
+
+			public const string TemplateIdString = "4d41791a-d480-47d0-b7b6-71b2e49201f8";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Brand";
+
+					
+			public static readonly ID CategoriesFieldId = new ID("8fedddca-ed15-4775-9ae3-c6089796b106");
+			public const string CategoriesFieldName = "Categories";
+			
+					
+			public static readonly ID IndustriesFieldId = new ID("95a8500d-8506-4240-8a38-aee0b462f378");
+			public const string IndustriesFieldName = "Industries";
+			
+					
+			public static readonly ID NameFieldId = new ID("8c9334af-1f13-4852-9472-26d25cc6ec7c");
+			public const string NameFieldName = "Name";
+			
+			
+
+	}
+
+	
+	/// <summary>
+	/// Brand
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Regal Beloit/Data Templates/Brand</para>	
+	/// <para>ID: 4d41791a-d480-47d0-b7b6-71b2e49201f8</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IBrandConstants.TemplateIdString, AutoMap = true)] //, Cachable = true
+	public partial class Brand  : GlassBase, IBrand 
+	{
+	   
+						/// <summary>
+				/// The Categories field.
+				/// <para></para>
+				/// <para>Field Type: Multilist</para>		
+				/// <para>Field ID: 8fedddca-ed15-4775-9ae3-c6089796b106</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IBrandConstants.CategoriesFieldName)]
+				public virtual IEnumerable<Guid> Categories  {get; set;}
+					
+						/// <summary>
+				/// The Industries field.
+				/// <para></para>
+				/// <para>Field Type: Multilist</para>		
+				/// <para>Field ID: 95a8500d-8506-4240-8a38-aee0b462f378</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IBrandConstants.IndustriesFieldName)]
+				public virtual IEnumerable<Guid> Industries  {get; set;}
+					
+						/// <summary>
+				/// The Name field.
+				/// <para></para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: 8c9334af-1f13-4852-9472-26d25cc6ec7c</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IBrandConstants.NameFieldName)]
+				public virtual string Name  {get; set;}
+					
+			
+	}
+}
+namespace Regal.Main.Web.SC.Models.sitecore.templates.User_Defined.Regal_Beloit.Base_Templates
+{
+
+
+ 	/// <summary>
+	/// IRegal_Base Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Regal Beloit/Base Templates/Regal Base</para>	
+	/// <para>ID: 4ec3c743-3a37-4d5c-8823-602c2c2f6233</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IRegal_BaseConstants.TemplateIdString, AutoMap = true )] //, Cachable = true
+	public partial interface IRegal_Base : IGlassBase 
+	{
+				}
+
+
+	public static partial class IRegal_BaseConstants{
+
+			public const string TemplateIdString = "4ec3c743-3a37-4d5c-8823-602c2c2f6233";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Regal Base";
+
+			
+
+	}
+
+	
+	/// <summary>
+	/// Regal_Base
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Regal Beloit/Base Templates/Regal Base</para>	
+	/// <para>ID: 4ec3c743-3a37-4d5c-8823-602c2c2f6233</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IRegal_BaseConstants.TemplateIdString, AutoMap = true)] //, Cachable = true
+	public partial class Regal_Base  : GlassBase, IRegal_Base 
+	{
+	   
+			
+	}
+}
+namespace Regal.Main.Web.SC.Models.sitecore.templates.User_Defined.Regal_Beloit.Base_Templates
+{
+
+
+ 	/// <summary>
+	/// IBase_Page Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Regal Beloit/Base Templates/Base Page</para>	
+	/// <para>ID: 6ec9c16e-8a55-4f5a-9c05-c5e3e40189c4</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IBase_PageConstants.TemplateIdString, AutoMap = true )] //, Cachable = true
+	public partial interface IBase_Page : IGlassBase , global::Regal.Main.Web.SC.Models.sitecore.templates.User_Defined.Regal_Beloit.Base_Templates.IRegal_Base
+	{
+								/// <summary>
+					/// The Include In Navigation field.
+					/// <para></para>
+					/// <para>Field Type: Checkbox</para>		
+					/// <para>Field ID: 30c12ab3-d1be-4ed3-a515-cf0cc52db8c0</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IBase_PageConstants.Include_In_NavigationFieldName)]
+					bool Include_In_Navigation  {get; set;}
+			
+								/// <summary>
+					/// The Navigation Title field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: ef7e55ef-e1a6-41de-bc88-aaa5aac8a276</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IBase_PageConstants.Navigation_TitleFieldName)]
+					string Navigation_Title  {get; set;}
+			
+								/// <summary>
+					/// The Custom Meta field.
+					/// <para></para>
+					/// <para>Field Type: Multi-Line Text</para>		
+					/// <para>Field ID: 303006aa-4139-46bd-9002-6b9c80b39fe5</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IBase_PageConstants.Custom_MetaFieldName)]
+					string Custom_Meta  {get; set;}
+			
+								/// <summary>
+					/// The Meta Description field.
+					/// <para></para>
+					/// <para>Field Type: Rich Text</para>		
+					/// <para>Field ID: 62f7f233-6928-4670-ba6f-95b2ad65a300</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IBase_PageConstants.Meta_DescriptionFieldName)]
+					string Meta_Description  {get; set;}
+			
+								/// <summary>
+					/// The Meta Keywords field.
+					/// <para></para>
+					/// <para>Field Type: Multi-Line Text</para>		
+					/// <para>Field ID: 32497ca5-22da-47ce-b00c-403aa5368ed8</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IBase_PageConstants.Meta_KeywordsFieldName)]
+					string Meta_Keywords  {get; set;}
+			
+								/// <summary>
+					/// The Meta Title field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: aeaa1771-9dbc-4a51-9789-a65265170239</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IBase_PageConstants.Meta_TitleFieldName)]
+					string Meta_Title  {get; set;}
+			
+								/// <summary>
+					/// The No Follow field.
+					/// <para></para>
+					/// <para>Field Type: Checkbox</para>		
+					/// <para>Field ID: 75a39161-c3e5-45cb-8cf2-fe1b73a268fb</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IBase_PageConstants.No_FollowFieldName)]
+					bool No_Follow  {get; set;}
+			
+								/// <summary>
+					/// The No Index field.
+					/// <para></para>
+					/// <para>Field Type: Checkbox</para>		
+					/// <para>Field ID: 4a6b545f-1268-47d5-8db0-047fc3378091</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IBase_PageConstants.No_IndexFieldName)]
+					bool No_Index  {get; set;}
+			
+								/// <summary>
+					/// The Description field.
+					/// <para></para>
+					/// <para>Field Type: Rich Text</para>		
+					/// <para>Field ID: 8928972d-2729-47aa-8200-99eddb409496</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IBase_PageConstants.DescriptionFieldName)]
+					string Description  {get; set;}
+			
+								/// <summary>
+					/// The Image field.
+					/// <para></para>
+					/// <para>Field Type: Image</para>		
+					/// <para>Field ID: 44d75529-0f6b-4b50-8373-bc6110f8904c</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IBase_PageConstants.ImageFieldName)]
+					Image Image  {get; set;}
+			
+								/// <summary>
+					/// The Page Title field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 7374fe16-a227-4214-bde5-c159cf2673d1</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IBase_PageConstants.Page_TitleFieldName)]
+					string Page_Title  {get; set;}
+			
+				}
+
+
+	public static partial class IBase_PageConstants{
+
+			public const string TemplateIdString = "6ec9c16e-8a55-4f5a-9c05-c5e3e40189c4";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Base Page";
+
+					
+			public static readonly ID Include_In_NavigationFieldId = new ID("30c12ab3-d1be-4ed3-a515-cf0cc52db8c0");
+			public const string Include_In_NavigationFieldName = "Include In Navigation";
+			
+					
+			public static readonly ID Navigation_TitleFieldId = new ID("ef7e55ef-e1a6-41de-bc88-aaa5aac8a276");
+			public const string Navigation_TitleFieldName = "Navigation Title";
+			
+					
+			public static readonly ID Custom_MetaFieldId = new ID("303006aa-4139-46bd-9002-6b9c80b39fe5");
+			public const string Custom_MetaFieldName = "Custom Meta";
+			
+					
+			public static readonly ID Meta_DescriptionFieldId = new ID("62f7f233-6928-4670-ba6f-95b2ad65a300");
+			public const string Meta_DescriptionFieldName = "Meta Description";
+			
+					
+			public static readonly ID Meta_KeywordsFieldId = new ID("32497ca5-22da-47ce-b00c-403aa5368ed8");
+			public const string Meta_KeywordsFieldName = "Meta Keywords";
+			
+					
+			public static readonly ID Meta_TitleFieldId = new ID("aeaa1771-9dbc-4a51-9789-a65265170239");
+			public const string Meta_TitleFieldName = "Meta Title";
+			
+					
+			public static readonly ID No_FollowFieldId = new ID("75a39161-c3e5-45cb-8cf2-fe1b73a268fb");
+			public const string No_FollowFieldName = "No Follow";
+			
+					
+			public static readonly ID No_IndexFieldId = new ID("4a6b545f-1268-47d5-8db0-047fc3378091");
+			public const string No_IndexFieldName = "No Index";
+			
+					
+			public static readonly ID DescriptionFieldId = new ID("8928972d-2729-47aa-8200-99eddb409496");
+			public const string DescriptionFieldName = "Description";
+			
+					
+			public static readonly ID ImageFieldId = new ID("44d75529-0f6b-4b50-8373-bc6110f8904c");
+			public const string ImageFieldName = "Image";
+			
+					
+			public static readonly ID Page_TitleFieldId = new ID("7374fe16-a227-4214-bde5-c159cf2673d1");
+			public const string Page_TitleFieldName = "Page Title";
+			
+			
+
+	}
+
+	
+	/// <summary>
+	/// Base_Page
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Regal Beloit/Base Templates/Base Page</para>	
+	/// <para>ID: 6ec9c16e-8a55-4f5a-9c05-c5e3e40189c4</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IBase_PageConstants.TemplateIdString, AutoMap = true)] //, Cachable = true
+	public partial class Base_Page  : GlassBase, IBase_Page 
+	{
+	   
+						/// <summary>
+				/// The Include In Navigation field.
+				/// <para></para>
+				/// <para>Field Type: Checkbox</para>		
+				/// <para>Field ID: 30c12ab3-d1be-4ed3-a515-cf0cc52db8c0</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IBase_PageConstants.Include_In_NavigationFieldName)]
+				public virtual bool Include_In_Navigation  {get; set;}
+					
+						/// <summary>
+				/// The Navigation Title field.
+				/// <para></para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: ef7e55ef-e1a6-41de-bc88-aaa5aac8a276</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IBase_PageConstants.Navigation_TitleFieldName)]
+				public virtual string Navigation_Title  {get; set;}
+					
+						/// <summary>
+				/// The Custom Meta field.
+				/// <para></para>
+				/// <para>Field Type: Multi-Line Text</para>		
+				/// <para>Field ID: 303006aa-4139-46bd-9002-6b9c80b39fe5</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IBase_PageConstants.Custom_MetaFieldName)]
+				public virtual string Custom_Meta  {get; set;}
+					
+						/// <summary>
+				/// The Meta Description field.
+				/// <para></para>
+				/// <para>Field Type: Rich Text</para>		
+				/// <para>Field ID: 62f7f233-6928-4670-ba6f-95b2ad65a300</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IBase_PageConstants.Meta_DescriptionFieldName)]
+				public virtual string Meta_Description  {get; set;}
+					
+						/// <summary>
+				/// The Meta Keywords field.
+				/// <para></para>
+				/// <para>Field Type: Multi-Line Text</para>		
+				/// <para>Field ID: 32497ca5-22da-47ce-b00c-403aa5368ed8</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IBase_PageConstants.Meta_KeywordsFieldName)]
+				public virtual string Meta_Keywords  {get; set;}
+					
+						/// <summary>
+				/// The Meta Title field.
+				/// <para></para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: aeaa1771-9dbc-4a51-9789-a65265170239</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IBase_PageConstants.Meta_TitleFieldName)]
+				public virtual string Meta_Title  {get; set;}
+					
+						/// <summary>
+				/// The No Follow field.
+				/// <para></para>
+				/// <para>Field Type: Checkbox</para>		
+				/// <para>Field ID: 75a39161-c3e5-45cb-8cf2-fe1b73a268fb</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IBase_PageConstants.No_FollowFieldName)]
+				public virtual bool No_Follow  {get; set;}
+					
+						/// <summary>
+				/// The No Index field.
+				/// <para></para>
+				/// <para>Field Type: Checkbox</para>		
+				/// <para>Field ID: 4a6b545f-1268-47d5-8db0-047fc3378091</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IBase_PageConstants.No_IndexFieldName)]
+				public virtual bool No_Index  {get; set;}
+					
+						/// <summary>
+				/// The Description field.
+				/// <para></para>
+				/// <para>Field Type: Rich Text</para>		
+				/// <para>Field ID: 8928972d-2729-47aa-8200-99eddb409496</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IBase_PageConstants.DescriptionFieldName)]
+				public virtual string Description  {get; set;}
+					
+						/// <summary>
+				/// The Image field.
+				/// <para></para>
+				/// <para>Field Type: Image</para>		
+				/// <para>Field ID: 44d75529-0f6b-4b50-8373-bc6110f8904c</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IBase_PageConstants.ImageFieldName)]
+				public virtual Image Image  {get; set;}
+					
+						/// <summary>
+				/// The Page Title field.
+				/// <para></para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: 7374fe16-a227-4214-bde5-c159cf2673d1</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IBase_PageConstants.Page_TitleFieldName)]
+				public virtual string Page_Title  {get; set;}
+					
+			
+	}
+}
+namespace Regal.Main.Web.SC.Models.sitecore.templates.User_Defined.Regal_Beloit.Folders
+{
+
+
+ 	/// <summary>
+	/// IIndustries_Folder Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Regal Beloit/Folders/Industries Folder</para>	
+	/// <para>ID: 7750ebf1-2b33-439c-abb1-e5b16f32e9f3</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IIndustries_FolderConstants.TemplateIdString, AutoMap = true )] //, Cachable = true
+	public partial interface IIndustries_Folder : IGlassBase 
+	{
+				}
+
+
+	public static partial class IIndustries_FolderConstants{
+
+			public const string TemplateIdString = "7750ebf1-2b33-439c-abb1-e5b16f32e9f3";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Industries Folder";
+
+			
+
+	}
+
+	
+	/// <summary>
+	/// Industries_Folder
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Regal Beloit/Folders/Industries Folder</para>	
+	/// <para>ID: 7750ebf1-2b33-439c-abb1-e5b16f32e9f3</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IIndustries_FolderConstants.TemplateIdString, AutoMap = true)] //, Cachable = true
+	public partial class Industries_Folder  : GlassBase, IIndustries_Folder 
+	{
+	   
+			
+	}
+}
+namespace Regal.Main.Web.SC.Models.sitecore.templates.User_Defined.Regal_Beloit.Pages
+{
+
+
+ 	/// <summary>
+	/// IProduct_Category_Page Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Regal Beloit/Pages/Product Category Page</para>	
+	/// <para>ID: 7a975061-a288-4a3c-adc9-bfbfbfd218b0</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IProduct_Category_PageConstants.TemplateIdString, AutoMap = true )] //, Cachable = true
+	public partial interface IProduct_Category_Page : IGlassBase , global::Regal.Main.Web.SC.Models.sitecore.templates.User_Defined.Regal_Beloit.Base_Templates.IBase_Page
+	{
+				}
+
+
+	public static partial class IProduct_Category_PageConstants{
+
+			public const string TemplateIdString = "7a975061-a288-4a3c-adc9-bfbfbfd218b0";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Product Category Page";
+
+					
+			public static readonly ID Include_In_NavigationFieldId = new ID("30c12ab3-d1be-4ed3-a515-cf0cc52db8c0");
+			public const string Include_In_NavigationFieldName = "Include In Navigation";
+			
+					
+			public static readonly ID Navigation_TitleFieldId = new ID("ef7e55ef-e1a6-41de-bc88-aaa5aac8a276");
+			public const string Navigation_TitleFieldName = "Navigation Title";
+			
+					
+			public static readonly ID Custom_MetaFieldId = new ID("303006aa-4139-46bd-9002-6b9c80b39fe5");
+			public const string Custom_MetaFieldName = "Custom Meta";
+			
+					
+			public static readonly ID Meta_DescriptionFieldId = new ID("62f7f233-6928-4670-ba6f-95b2ad65a300");
+			public const string Meta_DescriptionFieldName = "Meta Description";
+			
+					
+			public static readonly ID Meta_KeywordsFieldId = new ID("32497ca5-22da-47ce-b00c-403aa5368ed8");
+			public const string Meta_KeywordsFieldName = "Meta Keywords";
+			
+					
+			public static readonly ID Meta_TitleFieldId = new ID("aeaa1771-9dbc-4a51-9789-a65265170239");
+			public const string Meta_TitleFieldName = "Meta Title";
+			
+					
+			public static readonly ID No_FollowFieldId = new ID("75a39161-c3e5-45cb-8cf2-fe1b73a268fb");
+			public const string No_FollowFieldName = "No Follow";
+			
+					
+			public static readonly ID No_IndexFieldId = new ID("4a6b545f-1268-47d5-8db0-047fc3378091");
+			public const string No_IndexFieldName = "No Index";
+			
+					
+			public static readonly ID DescriptionFieldId = new ID("8928972d-2729-47aa-8200-99eddb409496");
+			public const string DescriptionFieldName = "Description";
+			
+					
+			public static readonly ID ImageFieldId = new ID("44d75529-0f6b-4b50-8373-bc6110f8904c");
+			public const string ImageFieldName = "Image";
+			
+					
+			public static readonly ID Page_TitleFieldId = new ID("7374fe16-a227-4214-bde5-c159cf2673d1");
+			public const string Page_TitleFieldName = "Page Title";
+			
+			
+
+	}
+
+	
+	/// <summary>
+	/// Product_Category_Page
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Regal Beloit/Pages/Product Category Page</para>	
+	/// <para>ID: 7a975061-a288-4a3c-adc9-bfbfbfd218b0</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IProduct_Category_PageConstants.TemplateIdString, AutoMap = true)] //, Cachable = true
+	public partial class Product_Category_Page  : GlassBase, IProduct_Category_Page 
+	{
+	   
+						/// <summary>
+				/// The Include In Navigation field.
+				/// <para></para>
+				/// <para>Field Type: Checkbox</para>		
+				/// <para>Field ID: 30c12ab3-d1be-4ed3-a515-cf0cc52db8c0</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IProduct_Category_PageConstants.Include_In_NavigationFieldName)]
+				public virtual bool Include_In_Navigation  {get; set;}
+					
+						/// <summary>
+				/// The Navigation Title field.
+				/// <para></para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: ef7e55ef-e1a6-41de-bc88-aaa5aac8a276</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IProduct_Category_PageConstants.Navigation_TitleFieldName)]
+				public virtual string Navigation_Title  {get; set;}
+					
+						/// <summary>
+				/// The Custom Meta field.
+				/// <para></para>
+				/// <para>Field Type: Multi-Line Text</para>		
+				/// <para>Field ID: 303006aa-4139-46bd-9002-6b9c80b39fe5</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IProduct_Category_PageConstants.Custom_MetaFieldName)]
+				public virtual string Custom_Meta  {get; set;}
+					
+						/// <summary>
+				/// The Meta Description field.
+				/// <para></para>
+				/// <para>Field Type: Rich Text</para>		
+				/// <para>Field ID: 62f7f233-6928-4670-ba6f-95b2ad65a300</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IProduct_Category_PageConstants.Meta_DescriptionFieldName)]
+				public virtual string Meta_Description  {get; set;}
+					
+						/// <summary>
+				/// The Meta Keywords field.
+				/// <para></para>
+				/// <para>Field Type: Multi-Line Text</para>		
+				/// <para>Field ID: 32497ca5-22da-47ce-b00c-403aa5368ed8</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IProduct_Category_PageConstants.Meta_KeywordsFieldName)]
+				public virtual string Meta_Keywords  {get; set;}
+					
+						/// <summary>
+				/// The Meta Title field.
+				/// <para></para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: aeaa1771-9dbc-4a51-9789-a65265170239</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IProduct_Category_PageConstants.Meta_TitleFieldName)]
+				public virtual string Meta_Title  {get; set;}
+					
+						/// <summary>
+				/// The No Follow field.
+				/// <para></para>
+				/// <para>Field Type: Checkbox</para>		
+				/// <para>Field ID: 75a39161-c3e5-45cb-8cf2-fe1b73a268fb</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IProduct_Category_PageConstants.No_FollowFieldName)]
+				public virtual bool No_Follow  {get; set;}
+					
+						/// <summary>
+				/// The No Index field.
+				/// <para></para>
+				/// <para>Field Type: Checkbox</para>		
+				/// <para>Field ID: 4a6b545f-1268-47d5-8db0-047fc3378091</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IProduct_Category_PageConstants.No_IndexFieldName)]
+				public virtual bool No_Index  {get; set;}
+					
+						/// <summary>
+				/// The Description field.
+				/// <para></para>
+				/// <para>Field Type: Rich Text</para>		
+				/// <para>Field ID: 8928972d-2729-47aa-8200-99eddb409496</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IProduct_Category_PageConstants.DescriptionFieldName)]
+				public virtual string Description  {get; set;}
+					
+						/// <summary>
+				/// The Image field.
+				/// <para></para>
+				/// <para>Field Type: Image</para>		
+				/// <para>Field ID: 44d75529-0f6b-4b50-8373-bc6110f8904c</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IProduct_Category_PageConstants.ImageFieldName)]
+				public virtual Image Image  {get; set;}
+					
+						/// <summary>
+				/// The Page Title field.
+				/// <para></para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: 7374fe16-a227-4214-bde5-c159cf2673d1</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IProduct_Category_PageConstants.Page_TitleFieldName)]
+				public virtual string Page_Title  {get; set;}
+					
+			
 	}
 }
 namespace Regal.Main.Web.SC.Models.sitecore.templates.RegalMain.Base
@@ -92,7 +1070,7 @@ namespace Regal.Main.Web.SC.Models.sitecore.templates.RegalMain.Base
 	/// <para>Path: /sitecore/templates/RegalMain/Base/Metadata</para>	
 	/// <para>ID: 819db06e-a185-44ed-aee6-c5cf5e6abb79</para>	
 	/// </summary>
-	[SitecoreType(TemplateId=IMetadataConstants.TemplateIdString )] //, Cachable = true
+	[SitecoreType(TemplateId=IMetadataConstants.TemplateIdString, AutoMap = true )] //, Cachable = true
 	public partial interface IMetadata : IGlassBase 
 	{
 								/// <summary>
@@ -130,7 +1108,7 @@ namespace Regal.Main.Web.SC.Models.sitecore.templates.RegalMain.Base
 
 	public static partial class IMetadataConstants{
 
-			public const string TemplateIdString = "819DB06E-A185-44ED-AEE6-C5CF5E6ABB79";
+			public const string TemplateIdString = "819db06e-a185-44ed-aee6-c5cf5e6abb79";
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Metadata";
 
@@ -157,7 +1135,7 @@ namespace Regal.Main.Web.SC.Models.sitecore.templates.RegalMain.Base
 	/// <para>Path: /sitecore/templates/RegalMain/Base/Metadata</para>	
 	/// <para>ID: 819db06e-a185-44ed-aee6-c5cf5e6abb79</para>	
 	/// </summary>
-	[SitecoreType(TemplateId=IMetadataConstants.TemplateIdString)] //, Cachable = true
+	[SitecoreType(TemplateId=IMetadataConstants.TemplateIdString, AutoMap = true)] //, Cachable = true
 	public partial class Metadata  : GlassBase, IMetadata 
 	{
 	   
@@ -193,6 +1171,1196 @@ namespace Regal.Main.Web.SC.Models.sitecore.templates.RegalMain.Base
 				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
 				[SitecoreField(IMetadataConstants.MetaTitleFieldName)]
 				public virtual string MetaTitle  {get; set;}
+					
+			
+	}
+}
+namespace Regal.Main.Web.SC.Models.sitecore.templates.User_Defined.Regal_Beloit.Folders
+{
+
+
+ 	/// <summary>
+	/// ICategories_Folder Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Regal Beloit/Folders/Categories Folder</para>	
+	/// <para>ID: 86003522-1c05-49f4-a034-0cecff2033c3</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=ICategories_FolderConstants.TemplateIdString, AutoMap = true )] //, Cachable = true
+	public partial interface ICategories_Folder : IGlassBase 
+	{
+				}
+
+
+	public static partial class ICategories_FolderConstants{
+
+			public const string TemplateIdString = "86003522-1c05-49f4-a034-0cecff2033c3";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Categories Folder";
+
+			
+
+	}
+
+	
+	/// <summary>
+	/// Categories_Folder
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Regal Beloit/Folders/Categories Folder</para>	
+	/// <para>ID: 86003522-1c05-49f4-a034-0cecff2033c3</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=ICategories_FolderConstants.TemplateIdString, AutoMap = true)] //, Cachable = true
+	public partial class Categories_Folder  : GlassBase, ICategories_Folder 
+	{
+	   
+			
+	}
+}
+namespace Regal.Main.Web.SC.Models.sitecore.templates.User_Defined.Regal_Beloit.Data_Templates
+{
+
+
+ 	/// <summary>
+	/// ICategory Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Regal Beloit/Data Templates/Category</para>	
+	/// <para>ID: 9dfc27fd-5494-4930-bddf-f0bc3359ec99</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=ICategoryConstants.TemplateIdString, AutoMap = true )] //, Cachable = true
+	public partial interface ICategory : IGlassBase , global::Regal.Main.Web.SC.Models.sitecore.templates.User_Defined.Regal_Beloit.Base_Templates.IBase_Data
+	{
+				}
+
+
+	public static partial class ICategoryConstants{
+
+			public const string TemplateIdString = "9dfc27fd-5494-4930-bddf-f0bc3359ec99";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Category";
+
+					
+			public static readonly ID NameFieldId = new ID("8c9334af-1f13-4852-9472-26d25cc6ec7c");
+			public const string NameFieldName = "Name";
+			
+			
+
+	}
+
+	
+	/// <summary>
+	/// Category
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Regal Beloit/Data Templates/Category</para>	
+	/// <para>ID: 9dfc27fd-5494-4930-bddf-f0bc3359ec99</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=ICategoryConstants.TemplateIdString, AutoMap = true)] //, Cachable = true
+	public partial class Category  : GlassBase, ICategory 
+	{
+	   
+						/// <summary>
+				/// The Name field.
+				/// <para></para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: 8c9334af-1f13-4852-9472-26d25cc6ec7c</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(ICategoryConstants.NameFieldName)]
+				public virtual string Name  {get; set;}
+					
+			
+	}
+}
+namespace Regal.Main.Web.SC.Models.sitecore.templates.User_Defined.Regal_Beloit.Pages.Base_Templates
+{
+
+
+ 	/// <summary>
+	/// IBase_Page Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Regal Beloit/Pages/Base Templates/Base Page</para>	
+	/// <para>ID: a0321b1d-38bf-4c9d-9720-6778c53ae57b</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IBase_PageConstants.TemplateIdString, AutoMap = true )] //, Cachable = true
+	public partial interface IBase_Page : IGlassBase 
+	{
+				}
+
+
+	public static partial class IBase_PageConstants{
+
+			public const string TemplateIdString = "a0321b1d-38bf-4c9d-9720-6778c53ae57b";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Base Page";
+
+			
+
+	}
+
+	
+	/// <summary>
+	/// Base_Page
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Regal Beloit/Pages/Base Templates/Base Page</para>	
+	/// <para>ID: a0321b1d-38bf-4c9d-9720-6778c53ae57b</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IBase_PageConstants.TemplateIdString, AutoMap = true)] //, Cachable = true
+	public partial class Base_Page  : GlassBase, IBase_Page 
+	{
+	   
+			
+	}
+}
+namespace Regal.Main.Web.SC.Models.sitecore.templates.User_Defined.Regal_Beloit.Pages
+{
+
+
+ 	/// <summary>
+	/// IBrand_Details_Page Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Regal Beloit/Pages/Brand Details Page</para>	
+	/// <para>ID: a72b00ea-c341-4407-941d-7eaebbe649d0</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IBrand_Details_PageConstants.TemplateIdString, AutoMap = true )] //, Cachable = true
+	public partial interface IBrand_Details_Page : IGlassBase , global::Regal.Main.Web.SC.Models.sitecore.templates.User_Defined.Regal_Beloit.Base_Templates.IBase_Page
+	{
+								/// <summary>
+					/// The Brand Item field.
+					/// <para></para>
+					/// <para>Field Type: Droplink</para>		
+					/// <para>Field ID: 21fe2a6b-ce98-45ed-8592-daecbbf50359</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IBrand_Details_PageConstants.Brand_ItemFieldName)]
+					Guid Brand_Item  {get; set;}
+			
+								/// <summary>
+					/// The Thumbnail Image field.
+					/// <para></para>
+					/// <para>Field Type: Image</para>		
+					/// <para>Field ID: 447f1131-5828-4288-bec7-ce8586752942</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IBrand_Details_PageConstants.Thumbnail_ImageFieldName)]
+					Image Thumbnail_Image  {get; set;}
+			
+				}
+
+
+	public static partial class IBrand_Details_PageConstants{
+
+			public const string TemplateIdString = "a72b00ea-c341-4407-941d-7eaebbe649d0";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Brand Details Page";
+
+					
+			public static readonly ID Brand_ItemFieldId = new ID("21fe2a6b-ce98-45ed-8592-daecbbf50359");
+			public const string Brand_ItemFieldName = "Brand Item";
+			
+					
+			public static readonly ID Thumbnail_ImageFieldId = new ID("447f1131-5828-4288-bec7-ce8586752942");
+			public const string Thumbnail_ImageFieldName = "Thumbnail Image";
+			
+					
+			public static readonly ID Include_In_NavigationFieldId = new ID("30c12ab3-d1be-4ed3-a515-cf0cc52db8c0");
+			public const string Include_In_NavigationFieldName = "Include In Navigation";
+			
+					
+			public static readonly ID Navigation_TitleFieldId = new ID("ef7e55ef-e1a6-41de-bc88-aaa5aac8a276");
+			public const string Navigation_TitleFieldName = "Navigation Title";
+			
+					
+			public static readonly ID Custom_MetaFieldId = new ID("303006aa-4139-46bd-9002-6b9c80b39fe5");
+			public const string Custom_MetaFieldName = "Custom Meta";
+			
+					
+			public static readonly ID Meta_DescriptionFieldId = new ID("62f7f233-6928-4670-ba6f-95b2ad65a300");
+			public const string Meta_DescriptionFieldName = "Meta Description";
+			
+					
+			public static readonly ID Meta_KeywordsFieldId = new ID("32497ca5-22da-47ce-b00c-403aa5368ed8");
+			public const string Meta_KeywordsFieldName = "Meta Keywords";
+			
+					
+			public static readonly ID Meta_TitleFieldId = new ID("aeaa1771-9dbc-4a51-9789-a65265170239");
+			public const string Meta_TitleFieldName = "Meta Title";
+			
+					
+			public static readonly ID No_FollowFieldId = new ID("75a39161-c3e5-45cb-8cf2-fe1b73a268fb");
+			public const string No_FollowFieldName = "No Follow";
+			
+					
+			public static readonly ID No_IndexFieldId = new ID("4a6b545f-1268-47d5-8db0-047fc3378091");
+			public const string No_IndexFieldName = "No Index";
+			
+					
+			public static readonly ID DescriptionFieldId = new ID("8928972d-2729-47aa-8200-99eddb409496");
+			public const string DescriptionFieldName = "Description";
+			
+					
+			public static readonly ID ImageFieldId = new ID("44d75529-0f6b-4b50-8373-bc6110f8904c");
+			public const string ImageFieldName = "Image";
+			
+					
+			public static readonly ID Page_TitleFieldId = new ID("7374fe16-a227-4214-bde5-c159cf2673d1");
+			public const string Page_TitleFieldName = "Page Title";
+			
+			
+
+	}
+
+	
+	/// <summary>
+	/// Brand_Details_Page
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Regal Beloit/Pages/Brand Details Page</para>	
+	/// <para>ID: a72b00ea-c341-4407-941d-7eaebbe649d0</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IBrand_Details_PageConstants.TemplateIdString, AutoMap = true)] //, Cachable = true
+	public partial class Brand_Details_Page  : GlassBase, IBrand_Details_Page 
+	{
+	   
+						/// <summary>
+				/// The Brand Item field.
+				/// <para></para>
+				/// <para>Field Type: Droplink</para>		
+				/// <para>Field ID: 21fe2a6b-ce98-45ed-8592-daecbbf50359</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IBrand_Details_PageConstants.Brand_ItemFieldName)]
+				public virtual Guid Brand_Item  {get; set;}
+					
+						/// <summary>
+				/// The Thumbnail Image field.
+				/// <para></para>
+				/// <para>Field Type: Image</para>		
+				/// <para>Field ID: 447f1131-5828-4288-bec7-ce8586752942</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IBrand_Details_PageConstants.Thumbnail_ImageFieldName)]
+				public virtual Image Thumbnail_Image  {get; set;}
+					
+						/// <summary>
+				/// The Include In Navigation field.
+				/// <para></para>
+				/// <para>Field Type: Checkbox</para>		
+				/// <para>Field ID: 30c12ab3-d1be-4ed3-a515-cf0cc52db8c0</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IBrand_Details_PageConstants.Include_In_NavigationFieldName)]
+				public virtual bool Include_In_Navigation  {get; set;}
+					
+						/// <summary>
+				/// The Navigation Title field.
+				/// <para></para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: ef7e55ef-e1a6-41de-bc88-aaa5aac8a276</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IBrand_Details_PageConstants.Navigation_TitleFieldName)]
+				public virtual string Navigation_Title  {get; set;}
+					
+						/// <summary>
+				/// The Custom Meta field.
+				/// <para></para>
+				/// <para>Field Type: Multi-Line Text</para>		
+				/// <para>Field ID: 303006aa-4139-46bd-9002-6b9c80b39fe5</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IBrand_Details_PageConstants.Custom_MetaFieldName)]
+				public virtual string Custom_Meta  {get; set;}
+					
+						/// <summary>
+				/// The Meta Description field.
+				/// <para></para>
+				/// <para>Field Type: Rich Text</para>		
+				/// <para>Field ID: 62f7f233-6928-4670-ba6f-95b2ad65a300</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IBrand_Details_PageConstants.Meta_DescriptionFieldName)]
+				public virtual string Meta_Description  {get; set;}
+					
+						/// <summary>
+				/// The Meta Keywords field.
+				/// <para></para>
+				/// <para>Field Type: Multi-Line Text</para>		
+				/// <para>Field ID: 32497ca5-22da-47ce-b00c-403aa5368ed8</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IBrand_Details_PageConstants.Meta_KeywordsFieldName)]
+				public virtual string Meta_Keywords  {get; set;}
+					
+						/// <summary>
+				/// The Meta Title field.
+				/// <para></para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: aeaa1771-9dbc-4a51-9789-a65265170239</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IBrand_Details_PageConstants.Meta_TitleFieldName)]
+				public virtual string Meta_Title  {get; set;}
+					
+						/// <summary>
+				/// The No Follow field.
+				/// <para></para>
+				/// <para>Field Type: Checkbox</para>		
+				/// <para>Field ID: 75a39161-c3e5-45cb-8cf2-fe1b73a268fb</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IBrand_Details_PageConstants.No_FollowFieldName)]
+				public virtual bool No_Follow  {get; set;}
+					
+						/// <summary>
+				/// The No Index field.
+				/// <para></para>
+				/// <para>Field Type: Checkbox</para>		
+				/// <para>Field ID: 4a6b545f-1268-47d5-8db0-047fc3378091</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IBrand_Details_PageConstants.No_IndexFieldName)]
+				public virtual bool No_Index  {get; set;}
+					
+						/// <summary>
+				/// The Description field.
+				/// <para></para>
+				/// <para>Field Type: Rich Text</para>		
+				/// <para>Field ID: 8928972d-2729-47aa-8200-99eddb409496</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IBrand_Details_PageConstants.DescriptionFieldName)]
+				public virtual string Description  {get; set;}
+					
+						/// <summary>
+				/// The Image field.
+				/// <para></para>
+				/// <para>Field Type: Image</para>		
+				/// <para>Field ID: 44d75529-0f6b-4b50-8373-bc6110f8904c</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IBrand_Details_PageConstants.ImageFieldName)]
+				public virtual Image Image  {get; set;}
+					
+						/// <summary>
+				/// The Page Title field.
+				/// <para></para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: 7374fe16-a227-4214-bde5-c159cf2673d1</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IBrand_Details_PageConstants.Page_TitleFieldName)]
+				public virtual string Page_Title  {get; set;}
+					
+			
+	}
+}
+namespace Regal.Main.Web.SC.Models.sitecore.templates.User_Defined.Regal_Beloit.Base_Templates
+{
+
+
+ 	/// <summary>
+	/// IBase_Data Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Regal Beloit/Base Templates/Base Data</para>	
+	/// <para>ID: ad42e8f5-c74c-450a-8247-47cdfaad87e6</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IBase_DataConstants.TemplateIdString, AutoMap = true )] //, Cachable = true
+	public partial interface IBase_Data : IGlassBase , global::Regal.Main.Web.SC.Models.sitecore.templates.User_Defined.Regal_Beloit.Base_Templates.IRegal_Base
+	{
+								/// <summary>
+					/// The Name field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 8c9334af-1f13-4852-9472-26d25cc6ec7c</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IBase_DataConstants.NameFieldName)]
+					string Name  {get; set;}
+			
+				}
+
+
+	public static partial class IBase_DataConstants{
+
+			public const string TemplateIdString = "ad42e8f5-c74c-450a-8247-47cdfaad87e6";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Base Data";
+
+					
+			public static readonly ID NameFieldId = new ID("8c9334af-1f13-4852-9472-26d25cc6ec7c");
+			public const string NameFieldName = "Name";
+			
+			
+
+	}
+
+	
+	/// <summary>
+	/// Base_Data
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Regal Beloit/Base Templates/Base Data</para>	
+	/// <para>ID: ad42e8f5-c74c-450a-8247-47cdfaad87e6</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IBase_DataConstants.TemplateIdString, AutoMap = true)] //, Cachable = true
+	public partial class Base_Data  : GlassBase, IBase_Data 
+	{
+	   
+						/// <summary>
+				/// The Name field.
+				/// <para></para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: 8c9334af-1f13-4852-9472-26d25cc6ec7c</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IBase_DataConstants.NameFieldName)]
+				public virtual string Name  {get; set;}
+					
+			
+	}
+}
+namespace Regal.Main.Web.SC.Models.sitecore.templates.User_Defined.Regal_Beloit.Data_Templates
+{
+
+
+ 	/// <summary>
+	/// IIndustry Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Regal Beloit/Data Templates/Industry</para>	
+	/// <para>ID: ba402594-9b00-4450-b35a-5e21c382b79d</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IIndustryConstants.TemplateIdString, AutoMap = true )] //, Cachable = true
+	public partial interface IIndustry : IGlassBase , global::Regal.Main.Web.SC.Models.sitecore.templates.User_Defined.Regal_Beloit.Base_Templates.IBase_Data
+	{
+								/// <summary>
+					/// The Categories field.
+					/// <para></para>
+					/// <para>Field Type: Multilist</para>		
+					/// <para>Field ID: d7d6d88c-4b4b-4136-860d-20b72b000b75</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IIndustryConstants.CategoriesFieldName)]
+					IEnumerable<Guid> Categories  {get; set;}
+			
+				}
+
+
+	public static partial class IIndustryConstants{
+
+			public const string TemplateIdString = "ba402594-9b00-4450-b35a-5e21c382b79d";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Industry";
+
+					
+			public static readonly ID CategoriesFieldId = new ID("d7d6d88c-4b4b-4136-860d-20b72b000b75");
+			public const string CategoriesFieldName = "Categories";
+			
+					
+			public static readonly ID NameFieldId = new ID("8c9334af-1f13-4852-9472-26d25cc6ec7c");
+			public const string NameFieldName = "Name";
+			
+			
+
+	}
+
+	
+	/// <summary>
+	/// Industry
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Regal Beloit/Data Templates/Industry</para>	
+	/// <para>ID: ba402594-9b00-4450-b35a-5e21c382b79d</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IIndustryConstants.TemplateIdString, AutoMap = true)] //, Cachable = true
+	public partial class Industry  : GlassBase, IIndustry 
+	{
+	   
+						/// <summary>
+				/// The Categories field.
+				/// <para></para>
+				/// <para>Field Type: Multilist</para>		
+				/// <para>Field ID: d7d6d88c-4b4b-4136-860d-20b72b000b75</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IIndustryConstants.CategoriesFieldName)]
+				public virtual IEnumerable<Guid> Categories  {get; set;}
+					
+						/// <summary>
+				/// The Name field.
+				/// <para></para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: 8c9334af-1f13-4852-9472-26d25cc6ec7c</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IIndustryConstants.NameFieldName)]
+				public virtual string Name  {get; set;}
+					
+			
+	}
+}
+namespace Regal.Main.Web.SC.Models.sitecore.templates.User_Defined.Regal_Beloit.Pages
+{
+
+
+ 	/// <summary>
+	/// IProducts_Landing_Page Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Regal Beloit/Pages/Products Landing Page</para>	
+	/// <para>ID: be762914-caf9-4746-9f64-505252bb159d</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IProducts_Landing_PageConstants.TemplateIdString, AutoMap = true )] //, Cachable = true
+	public partial interface IProducts_Landing_Page : IGlassBase , global::Regal.Main.Web.SC.Models.sitecore.templates.User_Defined.Regal_Beloit.Base_Templates.IBase_Page
+	{
+				}
+
+
+	public static partial class IProducts_Landing_PageConstants{
+
+			public const string TemplateIdString = "be762914-caf9-4746-9f64-505252bb159d";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Products Landing Page";
+
+					
+			public static readonly ID Include_In_NavigationFieldId = new ID("30c12ab3-d1be-4ed3-a515-cf0cc52db8c0");
+			public const string Include_In_NavigationFieldName = "Include In Navigation";
+			
+					
+			public static readonly ID Navigation_TitleFieldId = new ID("ef7e55ef-e1a6-41de-bc88-aaa5aac8a276");
+			public const string Navigation_TitleFieldName = "Navigation Title";
+			
+					
+			public static readonly ID Custom_MetaFieldId = new ID("303006aa-4139-46bd-9002-6b9c80b39fe5");
+			public const string Custom_MetaFieldName = "Custom Meta";
+			
+					
+			public static readonly ID Meta_DescriptionFieldId = new ID("62f7f233-6928-4670-ba6f-95b2ad65a300");
+			public const string Meta_DescriptionFieldName = "Meta Description";
+			
+					
+			public static readonly ID Meta_KeywordsFieldId = new ID("32497ca5-22da-47ce-b00c-403aa5368ed8");
+			public const string Meta_KeywordsFieldName = "Meta Keywords";
+			
+					
+			public static readonly ID Meta_TitleFieldId = new ID("aeaa1771-9dbc-4a51-9789-a65265170239");
+			public const string Meta_TitleFieldName = "Meta Title";
+			
+					
+			public static readonly ID No_FollowFieldId = new ID("75a39161-c3e5-45cb-8cf2-fe1b73a268fb");
+			public const string No_FollowFieldName = "No Follow";
+			
+					
+			public static readonly ID No_IndexFieldId = new ID("4a6b545f-1268-47d5-8db0-047fc3378091");
+			public const string No_IndexFieldName = "No Index";
+			
+					
+			public static readonly ID DescriptionFieldId = new ID("8928972d-2729-47aa-8200-99eddb409496");
+			public const string DescriptionFieldName = "Description";
+			
+					
+			public static readonly ID ImageFieldId = new ID("44d75529-0f6b-4b50-8373-bc6110f8904c");
+			public const string ImageFieldName = "Image";
+			
+					
+			public static readonly ID Page_TitleFieldId = new ID("7374fe16-a227-4214-bde5-c159cf2673d1");
+			public const string Page_TitleFieldName = "Page Title";
+			
+			
+
+	}
+
+	
+	/// <summary>
+	/// Products_Landing_Page
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Regal Beloit/Pages/Products Landing Page</para>	
+	/// <para>ID: be762914-caf9-4746-9f64-505252bb159d</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IProducts_Landing_PageConstants.TemplateIdString, AutoMap = true)] //, Cachable = true
+	public partial class Products_Landing_Page  : GlassBase, IProducts_Landing_Page 
+	{
+	   
+						/// <summary>
+				/// The Include In Navigation field.
+				/// <para></para>
+				/// <para>Field Type: Checkbox</para>		
+				/// <para>Field ID: 30c12ab3-d1be-4ed3-a515-cf0cc52db8c0</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IProducts_Landing_PageConstants.Include_In_NavigationFieldName)]
+				public virtual bool Include_In_Navigation  {get; set;}
+					
+						/// <summary>
+				/// The Navigation Title field.
+				/// <para></para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: ef7e55ef-e1a6-41de-bc88-aaa5aac8a276</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IProducts_Landing_PageConstants.Navigation_TitleFieldName)]
+				public virtual string Navigation_Title  {get; set;}
+					
+						/// <summary>
+				/// The Custom Meta field.
+				/// <para></para>
+				/// <para>Field Type: Multi-Line Text</para>		
+				/// <para>Field ID: 303006aa-4139-46bd-9002-6b9c80b39fe5</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IProducts_Landing_PageConstants.Custom_MetaFieldName)]
+				public virtual string Custom_Meta  {get; set;}
+					
+						/// <summary>
+				/// The Meta Description field.
+				/// <para></para>
+				/// <para>Field Type: Rich Text</para>		
+				/// <para>Field ID: 62f7f233-6928-4670-ba6f-95b2ad65a300</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IProducts_Landing_PageConstants.Meta_DescriptionFieldName)]
+				public virtual string Meta_Description  {get; set;}
+					
+						/// <summary>
+				/// The Meta Keywords field.
+				/// <para></para>
+				/// <para>Field Type: Multi-Line Text</para>		
+				/// <para>Field ID: 32497ca5-22da-47ce-b00c-403aa5368ed8</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IProducts_Landing_PageConstants.Meta_KeywordsFieldName)]
+				public virtual string Meta_Keywords  {get; set;}
+					
+						/// <summary>
+				/// The Meta Title field.
+				/// <para></para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: aeaa1771-9dbc-4a51-9789-a65265170239</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IProducts_Landing_PageConstants.Meta_TitleFieldName)]
+				public virtual string Meta_Title  {get; set;}
+					
+						/// <summary>
+				/// The No Follow field.
+				/// <para></para>
+				/// <para>Field Type: Checkbox</para>		
+				/// <para>Field ID: 75a39161-c3e5-45cb-8cf2-fe1b73a268fb</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IProducts_Landing_PageConstants.No_FollowFieldName)]
+				public virtual bool No_Follow  {get; set;}
+					
+						/// <summary>
+				/// The No Index field.
+				/// <para></para>
+				/// <para>Field Type: Checkbox</para>		
+				/// <para>Field ID: 4a6b545f-1268-47d5-8db0-047fc3378091</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IProducts_Landing_PageConstants.No_IndexFieldName)]
+				public virtual bool No_Index  {get; set;}
+					
+						/// <summary>
+				/// The Description field.
+				/// <para></para>
+				/// <para>Field Type: Rich Text</para>		
+				/// <para>Field ID: 8928972d-2729-47aa-8200-99eddb409496</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IProducts_Landing_PageConstants.DescriptionFieldName)]
+				public virtual string Description  {get; set;}
+					
+						/// <summary>
+				/// The Image field.
+				/// <para></para>
+				/// <para>Field Type: Image</para>		
+				/// <para>Field ID: 44d75529-0f6b-4b50-8373-bc6110f8904c</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IProducts_Landing_PageConstants.ImageFieldName)]
+				public virtual Image Image  {get; set;}
+					
+						/// <summary>
+				/// The Page Title field.
+				/// <para></para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: 7374fe16-a227-4214-bde5-c159cf2673d1</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IProducts_Landing_PageConstants.Page_TitleFieldName)]
+				public virtual string Page_Title  {get; set;}
+					
+			
+	}
+}
+namespace Regal.Main.Web.SC.Models.sitecore.templates.User_Defined.Regal_Beloit.Pages
+{
+
+
+ 	/// <summary>
+	/// IBrands_Landing_Page Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Regal Beloit/Pages/Brands Landing Page</para>	
+	/// <para>ID: c5e00f7a-4b54-4bc8-ac6e-b30ab9865d79</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IBrands_Landing_PageConstants.TemplateIdString, AutoMap = true )] //, Cachable = true
+	public partial interface IBrands_Landing_Page : IGlassBase , global::Regal.Main.Web.SC.Models.sitecore.templates.User_Defined.Regal_Beloit.Base_Templates.IBase_Page
+	{
+				}
+
+
+	public static partial class IBrands_Landing_PageConstants{
+
+			public const string TemplateIdString = "c5e00f7a-4b54-4bc8-ac6e-b30ab9865d79";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Brands Landing Page";
+
+					
+			public static readonly ID Include_In_NavigationFieldId = new ID("30c12ab3-d1be-4ed3-a515-cf0cc52db8c0");
+			public const string Include_In_NavigationFieldName = "Include In Navigation";
+			
+					
+			public static readonly ID Navigation_TitleFieldId = new ID("ef7e55ef-e1a6-41de-bc88-aaa5aac8a276");
+			public const string Navigation_TitleFieldName = "Navigation Title";
+			
+					
+			public static readonly ID Custom_MetaFieldId = new ID("303006aa-4139-46bd-9002-6b9c80b39fe5");
+			public const string Custom_MetaFieldName = "Custom Meta";
+			
+					
+			public static readonly ID Meta_DescriptionFieldId = new ID("62f7f233-6928-4670-ba6f-95b2ad65a300");
+			public const string Meta_DescriptionFieldName = "Meta Description";
+			
+					
+			public static readonly ID Meta_KeywordsFieldId = new ID("32497ca5-22da-47ce-b00c-403aa5368ed8");
+			public const string Meta_KeywordsFieldName = "Meta Keywords";
+			
+					
+			public static readonly ID Meta_TitleFieldId = new ID("aeaa1771-9dbc-4a51-9789-a65265170239");
+			public const string Meta_TitleFieldName = "Meta Title";
+			
+					
+			public static readonly ID No_FollowFieldId = new ID("75a39161-c3e5-45cb-8cf2-fe1b73a268fb");
+			public const string No_FollowFieldName = "No Follow";
+			
+					
+			public static readonly ID No_IndexFieldId = new ID("4a6b545f-1268-47d5-8db0-047fc3378091");
+			public const string No_IndexFieldName = "No Index";
+			
+					
+			public static readonly ID DescriptionFieldId = new ID("8928972d-2729-47aa-8200-99eddb409496");
+			public const string DescriptionFieldName = "Description";
+			
+					
+			public static readonly ID ImageFieldId = new ID("44d75529-0f6b-4b50-8373-bc6110f8904c");
+			public const string ImageFieldName = "Image";
+			
+					
+			public static readonly ID Page_TitleFieldId = new ID("7374fe16-a227-4214-bde5-c159cf2673d1");
+			public const string Page_TitleFieldName = "Page Title";
+			
+			
+
+	}
+
+	
+	/// <summary>
+	/// Brands_Landing_Page
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Regal Beloit/Pages/Brands Landing Page</para>	
+	/// <para>ID: c5e00f7a-4b54-4bc8-ac6e-b30ab9865d79</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IBrands_Landing_PageConstants.TemplateIdString, AutoMap = true)] //, Cachable = true
+	public partial class Brands_Landing_Page  : GlassBase, IBrands_Landing_Page 
+	{
+	   
+						/// <summary>
+				/// The Include In Navigation field.
+				/// <para></para>
+				/// <para>Field Type: Checkbox</para>		
+				/// <para>Field ID: 30c12ab3-d1be-4ed3-a515-cf0cc52db8c0</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IBrands_Landing_PageConstants.Include_In_NavigationFieldName)]
+				public virtual bool Include_In_Navigation  {get; set;}
+					
+						/// <summary>
+				/// The Navigation Title field.
+				/// <para></para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: ef7e55ef-e1a6-41de-bc88-aaa5aac8a276</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IBrands_Landing_PageConstants.Navigation_TitleFieldName)]
+				public virtual string Navigation_Title  {get; set;}
+					
+						/// <summary>
+				/// The Custom Meta field.
+				/// <para></para>
+				/// <para>Field Type: Multi-Line Text</para>		
+				/// <para>Field ID: 303006aa-4139-46bd-9002-6b9c80b39fe5</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IBrands_Landing_PageConstants.Custom_MetaFieldName)]
+				public virtual string Custom_Meta  {get; set;}
+					
+						/// <summary>
+				/// The Meta Description field.
+				/// <para></para>
+				/// <para>Field Type: Rich Text</para>		
+				/// <para>Field ID: 62f7f233-6928-4670-ba6f-95b2ad65a300</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IBrands_Landing_PageConstants.Meta_DescriptionFieldName)]
+				public virtual string Meta_Description  {get; set;}
+					
+						/// <summary>
+				/// The Meta Keywords field.
+				/// <para></para>
+				/// <para>Field Type: Multi-Line Text</para>		
+				/// <para>Field ID: 32497ca5-22da-47ce-b00c-403aa5368ed8</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IBrands_Landing_PageConstants.Meta_KeywordsFieldName)]
+				public virtual string Meta_Keywords  {get; set;}
+					
+						/// <summary>
+				/// The Meta Title field.
+				/// <para></para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: aeaa1771-9dbc-4a51-9789-a65265170239</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IBrands_Landing_PageConstants.Meta_TitleFieldName)]
+				public virtual string Meta_Title  {get; set;}
+					
+						/// <summary>
+				/// The No Follow field.
+				/// <para></para>
+				/// <para>Field Type: Checkbox</para>		
+				/// <para>Field ID: 75a39161-c3e5-45cb-8cf2-fe1b73a268fb</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IBrands_Landing_PageConstants.No_FollowFieldName)]
+				public virtual bool No_Follow  {get; set;}
+					
+						/// <summary>
+				/// The No Index field.
+				/// <para></para>
+				/// <para>Field Type: Checkbox</para>		
+				/// <para>Field ID: 4a6b545f-1268-47d5-8db0-047fc3378091</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IBrands_Landing_PageConstants.No_IndexFieldName)]
+				public virtual bool No_Index  {get; set;}
+					
+						/// <summary>
+				/// The Description field.
+				/// <para></para>
+				/// <para>Field Type: Rich Text</para>		
+				/// <para>Field ID: 8928972d-2729-47aa-8200-99eddb409496</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IBrands_Landing_PageConstants.DescriptionFieldName)]
+				public virtual string Description  {get; set;}
+					
+						/// <summary>
+				/// The Image field.
+				/// <para></para>
+				/// <para>Field Type: Image</para>		
+				/// <para>Field ID: 44d75529-0f6b-4b50-8373-bc6110f8904c</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IBrands_Landing_PageConstants.ImageFieldName)]
+				public virtual Image Image  {get; set;}
+					
+						/// <summary>
+				/// The Page Title field.
+				/// <para></para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: 7374fe16-a227-4214-bde5-c159cf2673d1</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IBrands_Landing_PageConstants.Page_TitleFieldName)]
+				public virtual string Page_Title  {get; set;}
+					
+			
+	}
+}
+namespace Regal.Main.Web.SC.Models.sitecore.templates.User_Defined.Regal_Beloit.Folders
+{
+
+
+ 	/// <summary>
+	/// IGlobals Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Regal Beloit/Folders/Globals</para>	
+	/// <para>ID: dafecfa0-2c73-426a-a5b7-e055fcbf0d91</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IGlobalsConstants.TemplateIdString, AutoMap = true )] //, Cachable = true
+	public partial interface IGlobals : IGlassBase 
+	{
+				}
+
+
+	public static partial class IGlobalsConstants{
+
+			public const string TemplateIdString = "dafecfa0-2c73-426a-a5b7-e055fcbf0d91";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Globals";
+
+			
+
+	}
+
+	
+	/// <summary>
+	/// Globals
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Regal Beloit/Folders/Globals</para>	
+	/// <para>ID: dafecfa0-2c73-426a-a5b7-e055fcbf0d91</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IGlobalsConstants.TemplateIdString, AutoMap = true)] //, Cachable = true
+	public partial class Globals  : GlassBase, IGlobals 
+	{
+	   
+			
+	}
+}
+namespace Regal.Main.Web.SC.Models.sitecore.templates.User_Defined.Regal_Beloit.Pages
+{
+
+
+ 	/// <summary>
+	/// IHome_Page Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Regal Beloit/Pages/Home Page</para>	
+	/// <para>ID: de73dfb7-fa0e-476a-b29c-5600f623c296</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IHome_PageConstants.TemplateIdString, AutoMap = true )] //, Cachable = true
+	public partial interface IHome_Page : IGlassBase , global::Regal.Main.Web.SC.Models.sitecore.templates.User_Defined.Regal_Beloit.Base_Templates.IBase_Page
+	{
+				}
+
+
+	public static partial class IHome_PageConstants{
+
+			public const string TemplateIdString = "de73dfb7-fa0e-476a-b29c-5600f623c296";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Home Page";
+
+					
+			public static readonly ID Include_In_NavigationFieldId = new ID("30c12ab3-d1be-4ed3-a515-cf0cc52db8c0");
+			public const string Include_In_NavigationFieldName = "Include In Navigation";
+			
+					
+			public static readonly ID Navigation_TitleFieldId = new ID("ef7e55ef-e1a6-41de-bc88-aaa5aac8a276");
+			public const string Navigation_TitleFieldName = "Navigation Title";
+			
+					
+			public static readonly ID Custom_MetaFieldId = new ID("303006aa-4139-46bd-9002-6b9c80b39fe5");
+			public const string Custom_MetaFieldName = "Custom Meta";
+			
+					
+			public static readonly ID Meta_DescriptionFieldId = new ID("62f7f233-6928-4670-ba6f-95b2ad65a300");
+			public const string Meta_DescriptionFieldName = "Meta Description";
+			
+					
+			public static readonly ID Meta_KeywordsFieldId = new ID("32497ca5-22da-47ce-b00c-403aa5368ed8");
+			public const string Meta_KeywordsFieldName = "Meta Keywords";
+			
+					
+			public static readonly ID Meta_TitleFieldId = new ID("aeaa1771-9dbc-4a51-9789-a65265170239");
+			public const string Meta_TitleFieldName = "Meta Title";
+			
+					
+			public static readonly ID No_FollowFieldId = new ID("75a39161-c3e5-45cb-8cf2-fe1b73a268fb");
+			public const string No_FollowFieldName = "No Follow";
+			
+					
+			public static readonly ID No_IndexFieldId = new ID("4a6b545f-1268-47d5-8db0-047fc3378091");
+			public const string No_IndexFieldName = "No Index";
+			
+					
+			public static readonly ID DescriptionFieldId = new ID("8928972d-2729-47aa-8200-99eddb409496");
+			public const string DescriptionFieldName = "Description";
+			
+					
+			public static readonly ID ImageFieldId = new ID("44d75529-0f6b-4b50-8373-bc6110f8904c");
+			public const string ImageFieldName = "Image";
+			
+					
+			public static readonly ID Page_TitleFieldId = new ID("7374fe16-a227-4214-bde5-c159cf2673d1");
+			public const string Page_TitleFieldName = "Page Title";
+			
+			
+
+	}
+
+	
+	/// <summary>
+	/// Home_Page
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Regal Beloit/Pages/Home Page</para>	
+	/// <para>ID: de73dfb7-fa0e-476a-b29c-5600f623c296</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IHome_PageConstants.TemplateIdString, AutoMap = true)] //, Cachable = true
+	public partial class Home_Page  : GlassBase, IHome_Page 
+	{
+	   
+						/// <summary>
+				/// The Include In Navigation field.
+				/// <para></para>
+				/// <para>Field Type: Checkbox</para>		
+				/// <para>Field ID: 30c12ab3-d1be-4ed3-a515-cf0cc52db8c0</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IHome_PageConstants.Include_In_NavigationFieldName)]
+				public virtual bool Include_In_Navigation  {get; set;}
+					
+						/// <summary>
+				/// The Navigation Title field.
+				/// <para></para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: ef7e55ef-e1a6-41de-bc88-aaa5aac8a276</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IHome_PageConstants.Navigation_TitleFieldName)]
+				public virtual string Navigation_Title  {get; set;}
+					
+						/// <summary>
+				/// The Custom Meta field.
+				/// <para></para>
+				/// <para>Field Type: Multi-Line Text</para>		
+				/// <para>Field ID: 303006aa-4139-46bd-9002-6b9c80b39fe5</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IHome_PageConstants.Custom_MetaFieldName)]
+				public virtual string Custom_Meta  {get; set;}
+					
+						/// <summary>
+				/// The Meta Description field.
+				/// <para></para>
+				/// <para>Field Type: Rich Text</para>		
+				/// <para>Field ID: 62f7f233-6928-4670-ba6f-95b2ad65a300</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IHome_PageConstants.Meta_DescriptionFieldName)]
+				public virtual string Meta_Description  {get; set;}
+					
+						/// <summary>
+				/// The Meta Keywords field.
+				/// <para></para>
+				/// <para>Field Type: Multi-Line Text</para>		
+				/// <para>Field ID: 32497ca5-22da-47ce-b00c-403aa5368ed8</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IHome_PageConstants.Meta_KeywordsFieldName)]
+				public virtual string Meta_Keywords  {get; set;}
+					
+						/// <summary>
+				/// The Meta Title field.
+				/// <para></para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: aeaa1771-9dbc-4a51-9789-a65265170239</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IHome_PageConstants.Meta_TitleFieldName)]
+				public virtual string Meta_Title  {get; set;}
+					
+						/// <summary>
+				/// The No Follow field.
+				/// <para></para>
+				/// <para>Field Type: Checkbox</para>		
+				/// <para>Field ID: 75a39161-c3e5-45cb-8cf2-fe1b73a268fb</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IHome_PageConstants.No_FollowFieldName)]
+				public virtual bool No_Follow  {get; set;}
+					
+						/// <summary>
+				/// The No Index field.
+				/// <para></para>
+				/// <para>Field Type: Checkbox</para>		
+				/// <para>Field ID: 4a6b545f-1268-47d5-8db0-047fc3378091</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IHome_PageConstants.No_IndexFieldName)]
+				public virtual bool No_Index  {get; set;}
+					
+						/// <summary>
+				/// The Description field.
+				/// <para></para>
+				/// <para>Field Type: Rich Text</para>		
+				/// <para>Field ID: 8928972d-2729-47aa-8200-99eddb409496</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IHome_PageConstants.DescriptionFieldName)]
+				public virtual string Description  {get; set;}
+					
+						/// <summary>
+				/// The Image field.
+				/// <para></para>
+				/// <para>Field Type: Image</para>		
+				/// <para>Field ID: 44d75529-0f6b-4b50-8373-bc6110f8904c</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IHome_PageConstants.ImageFieldName)]
+				public virtual Image Image  {get; set;}
+					
+						/// <summary>
+				/// The Page Title field.
+				/// <para></para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: 7374fe16-a227-4214-bde5-c159cf2673d1</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IHome_PageConstants.Page_TitleFieldName)]
+				public virtual string Page_Title  {get; set;}
 					
 			
 	}

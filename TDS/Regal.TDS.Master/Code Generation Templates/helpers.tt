@@ -84,41 +84,7 @@ public static string GetPropertyName(SitecoreField field)
 	}
 	
 	bool isFieldPlural = IsFieldPlural(field);
-
-	if (field.Name == "SingleLineText1")
-		return "SingleLineText1Field";
-	if (field.Name == "SingleLineText2")
-		return "SingleLineText2Field";
-	if (field.Name == "SingleLineText3")
-		return "SingleLineText3Field";
-	if (field.Name == "SingleLineText7")
-		return "SingleLineText7Field";
-	if (field.Name == "SingleLineText9")
-		return "SingleLineText9Field";
-	if (field.Name == "Date")
-		return "DateField";
-	if (field.Name == "DateTime")
-		return "DateTimeField";
-	if (field.Name == "ExternalLink")
-		return "ExternalLinkField";
-	if (field.Name == "InternalLink")
-		return "InternalLinkField";
-	if (field.Name == "Heading")
-		return "HeadingField";
-	if (field.Name == "Abstract")
-		return "AbstractField";
-	if (field.Name == "Image")
-		return "ImageField";
-	if (field.Name == "Image2")
-		return "Image2Field";
-	if (field.Name == "Subtitle")
-		return "SubtitleField";
-	if (field.Name == "PlainText")
-		return "PlainTextField";
-
-
-
-
+	
 	return AsPropertyName(field.Name, isFieldPlural);
 }
 

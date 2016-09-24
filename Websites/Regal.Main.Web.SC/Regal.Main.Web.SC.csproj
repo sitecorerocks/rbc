@@ -128,12 +128,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\NavigationController.cs" />
+    <Compile Include="Controllers\BrandsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="IoC\DependencyResolutions.cs" />
+    <Compile Include="Models\BrandsViewModel.cs" />
     <Compile Include="Models\GeneratedModels.cs" />
+    <Compile Include="Models\GlassBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\IGlassBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\BrandsRepository.cs" />
+    <Compile Include="Repositories\IBrandsRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -158,10 +168,17 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
     <Content Include="Views\RegalMain\Shared\_Layout.cshtml" />
     <Content Include="assets\RegalMain\Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\Navigation\Demo.cshtml" />
+    <Content Include="Views\RegalMain\Renderings\Controls\Navigation\Demo.cshtml" />
+    <Content Include="Views\RegalMain\Layouts\Main.cshtml" />
+    <None Include="Properties\PublishProfiles\local.pubxml" />
+    <Content Include="Views\RegalMain\Renderings\Controls\Navigation\Footer.cshtml" />
+    <Content Include="Views\RegalMain\Renderings\Controls\Navigation\Header.cshtml" />
+    <Content Include="Views\RegalMain\Renderings\Pages\Home\Home.cshtml" />
+    <Content Include="Views\RegalMain\Renderings\Controls\Common\PageDetails.cshtml" />
+    <Content Include="Views\web.config" />
+    <Content Include="Views\RegalMain\Renderings\Pages\Brands\BrandsListing.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

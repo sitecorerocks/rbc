@@ -40,6 +40,7 @@
     <SitecoreWebUrl>http://regaldev</SitecoreWebUrl>
     <SitecoreAccessGuid>bdd660d9-773f-40d6-b282-4a202a4defe6</SitecoreAccessGuid>
     <InstallSitecoreConnector>True</InstallSitecoreConnector>
+    <DisableFileDeployment>True</DisableFileDeployment>
   </PropertyGroup>
   <ItemGroup>
     <AssemblyAttributes Include="AssemblyFileVersion">

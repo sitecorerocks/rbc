@@ -1,0 +1,28 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+
+@model Regal.Main.Web.SC.Models.BrandsViewModel
+
+
+<ul>
+    @foreach (var brand in Model.Brands)
+    {
+        <li>
+            <span>
+                <a href="@brand.Url">
+
+                    <img src="@brand.Thumbnail_Image.Src" />
+                </a>
+            </span>
+            <span>
+                <p>
+                    @brand.Page_Title
+                </p>
+                <span>
+                    @brand.Description
+                </span>
+            </span>
+
+        </li>
+    }
+</ul>

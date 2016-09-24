@@ -17,15 +17,22 @@ key: __sortorder
 content-length: 3
 
 400
+----field----
+field: {F1A1FE9E-A60C-4DDB-A3A0-BB5B29FE732E}
+name: __Renderings
+key: __renderings
+content-length: 359
+
+<r xmlns:xsd="http://www.w3.org/2001/XMLSchema" ><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}" l="{39C9CE0C-5BE9-4902-9CEB-111001EEBE23}"><r id="{22D83EF2-EE26-4785-BB34-A274E2399058}" ph="header" uid="{7CAEC359-9962-4938-9E75-BAA3AD4E0C52}" /><r id="{37821AF4-F458-44A4-9228-0B7A4CA0D830}" ph="footer" uid="{4C76F7BA-4C44-40DF-9C01-A67C7BAD1E93}" /></d></r>
 ----version----
 language: en
 version: 1
-revision: 98f33ffc-6690-47d6-a73b-edb6efe6ed85
+revision: ed84e722-4d63-43d2-a183-1bb8349caab8
 
 ----field----
 field: {7374FE16-A227-4214-BDE5-C159CF2673D1}
-name: Browser Title
-key: browser title
+name: Page Title
+key: page title
 content-length: 5
 
 $name
@@ -77,14 +84,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-98f33ffc-6690-47d6-a73b-edb6efe6ed85
+ed84e722-4d63-43d2-a183-1bb8349caab8
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160922T153941Z
+20160924T061928Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
